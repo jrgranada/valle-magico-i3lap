@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  valle_magico_front:
+    image: inclusionvalle/valle_magico_frontend:1.2.0
+    container_name: valle_magico_front
+    ports:
+      - "9092:80"
+    networks:
+      - network-valle_magico
+    depends_on:
+      - valle_magico_back
+    restart: always
+    environment:
+      - DB_HOST=35.227.112.152
+      - DB_PORT=3306
+      - DB_USERNAME=ehs
+      - DB_PASSWORD=vurwakuA2HySHhwyU5zM
+      - DB_DATABASE=talentumehs_valle_magico
+      - OPEN_LOCATION_DB=talentumehs_valle_open_location
+      - BACKEND_URL="http://host.docker.internal:9091/"
+  valle_magico_back:
+    image: inclusionvalle/valle_magico_backend:1.1.0
+    container_name: valle_magico_back
+    ports:
+      - "9091:3000"
+    networks:
+      - network-valle_magico
+    restart: always
+    environment:
+      - DB_HOST=35.227.112.152
+      - DB_PORT=3306
+      - DB_USERNAME=ehs
+      - DB_PASSWORD=vurwakuA2HySHhwyU5zM
+      - DB_ONE_NAME=talentumehs_valle_open_location
+      - DB_TWO_NAME=talentumehs_valle_magico
+networks:
+  network-valle_magico:
+    driver: bridge
