@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   valle_magico_front:
-    image: inclusionvalle/valle_magico_frontend:1.2.0
+    image: inclusionvalle/valle_magico_frontend:1.2.1
     container_name: valle_magico_front
     ports:
       - "9092:80"
@@ -10,6 +10,8 @@ services:
     depends_on:
       - valle_magico_back
     restart: always
+    #volumes:
+    #  - "./docker/.env:/var/www/html/.env"
     environment:
       - DB_HOST=35.227.112.152
       - DB_PORT=3306
@@ -17,7 +19,8 @@ services:
       - DB_PASSWORD=vurwakuA2HySHhwyU5zM
       - DB_DATABASE=talentumehs_valle_magico
       - OPEN_LOCATION_DB=talentumehs_valle_open_location
-      - BACKEND_URL="http://host.docker.internal:9091/"
+      - BACKEND_URL="http://my.content:9091/"
+      #- BACKEND_URL="http://host.docker.internal:9091/"
   valle_magico_back:
     image: inclusionvalle/valle_magico_backend:1.1.0
     container_name: valle_magico_back
