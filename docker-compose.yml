@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   webgl:
-    image: inclusionvalle/valle_magico_webgl_nginx:2.1.1-qa
+    image: inclusionvalle/valle_magico_webgl_nginx:2.1.1
     container_name: valle_magico_game
     ports:
       - "8070:80"
@@ -25,10 +25,10 @@ services:
     #volumes:
     #  - "./docker/.env:/var/www/html/.env"
     environment:
-      - DB_HOST=35.227.112.152
+      - DB_HOST=host.docker.internal
       - DB_PORT=3306
-      - DB_USERNAME=ehs
-      - DB_PASSWORD=vurwakuA2HySHhwyU5zM
+      - DB_USERNAME=valle-user
+      - DB_PASSWORD=Inclusionvalle2022*
       - DB_DATABASE=talentumehs_valle_magico
       - OPEN_LOCATION_DB=talentumehs_valle_open_location
       - BACKEND_URL="http://valle_magico_back:3000/"
@@ -43,10 +43,10 @@ services:
       - network-valle_magico
     restart: always
     environment:
-      - DB_HOST=35.227.112.152
+      - DB_HOST=host.docker.internal
       - DB_PORT=3306
-      - DB_USERNAME=ehs
-      - DB_PASSWORD=vurwakuA2HySHhwyU5zM
+      - DB_USERNAME=valle-user
+      - DB_PASSWORD=Inclusionvalle2022*
       - DB_ONE_NAME=talentumehs_valle_open_location
       - DB_TWO_NAME=talentumehs_valle_magico
 networks:
