@@ -2,16 +2,16 @@ version: '3.3'
 services:
   webgl:
     image: inclusionvalle/valle_magico_webgl_nginx:2.1.1-qa
-    container_name: inclusion-narino-game
+    container_name: valle_magico_game
     ports:
       - "8070:80"
     networks:
-      - inclusion-narino-network
+      - network-valle_magico
     depends_on:
       - back
     restart: always
     volumes:
-      - "./docker/serverdata.json:/webgl/StreamingAssets/serverdata.json"
+      - "./docker/serverdata.json:/valle/StreamingAssets/serverdata.json"
   valle_magico_front:
     image: inclusionvalle/valle_magico_frontend:1.2.1
     container_name: valle_magico_front
