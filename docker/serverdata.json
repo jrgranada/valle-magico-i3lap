@@ -12,7 +12,7 @@
         },
         {
             "typeServer": 2,
-            "serverHost": "http://my.content:9091/user-info/"
+            "serverHost": "http://my.content:9092/api/"
         }
     ]
 }
