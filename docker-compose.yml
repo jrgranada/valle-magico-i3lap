@@ -9,7 +9,7 @@ services:
       - network-valle_magico
     depends_on:
       - valle_magico_back
-    restart: unless-stopped
+    restart: always
     volumes:
       - "./docker/serverdata.json:/valle/StreamingAssets/serverdata.json"
   valle_magico_front:
@@ -21,7 +21,7 @@ services:
       - network-valle_magico
     depends_on:
       - valle_magico_back
-    restart: unless-stopped
+    restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
     #volumes:
@@ -43,7 +43,7 @@ services:
       - "9091:3000"
     networks:
       - network-valle_magico
-    restart: unless-stopped
+    restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
