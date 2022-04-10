@@ -13,7 +13,7 @@ services:
     volumes:
       - "./docker/serverdata.json:/valle/StreamingAssets/serverdata.json"
   valle_magico_front:
-    image: inclusionvalle/valle_magico_frontend:1.3.0
+    image: inclusionvalle/valle_magico_frontend:1.3.1
     container_name: valle_magico_front
     ports:
       - "9092:80"
@@ -24,8 +24,6 @@ services:
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    #volumes:
-    #  - "./docker/.env:/var/www/html/.env"
     environment:
       - DB_HOST=host.docker.internal
       - DB_PORT=3306
@@ -34,8 +32,6 @@ services:
       - DB_DATABASE=talentumehs_valle_magico
       - OPEN_LOCATION_DB=talentumehs_valle_open_location
       - BACKEND_URL="http://valle_magico_back:3000/"
-      #- BACKEND_URL="http://localhost:9091/"
-      #- BACKEND_URL="http://host.docker.internal:9091/"
   valle_magico_back:
     image: inclusionvalle/valle_magico_backend:1.1.0
     container_name: valle_magico_back
