@@ -33,7 +33,7 @@ Para establecer la conexión puede utilizar el software PuTTY que puede descarga
 [putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 ### Apertura de puertos en el I3LAP
-* Los puertos 9092 (Sistema de información) y 9091 (Backend) deben estar abiertos en el I3LAP, para ello ejecutar los siguientes comandos en la shell del dispositivo.    
+* Los puertos 8070 (Videojuego), 9092 (Sistema de información) y 9091 (Backend) deben estar abiertos en el I3LAP, para ello ejecutar los siguientes comandos en la shell del dispositivo.    
 
 Para entrar al modo super usuario ejecutar:  
 
@@ -44,6 +44,7 @@ Para entrar al modo super usuario ejecutar:
 Para la apertura de puertos ejecutar:  
 
 ```bash
+    sudo ufw allow 8070
     sudo ufw allow 9091
     sudo ufw allow 9092
 ```
