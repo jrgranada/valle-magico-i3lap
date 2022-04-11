@@ -52,7 +52,7 @@ Para la apertura de puertos ejecutar:
 ### Permitir las conexiones externas a la base de datos
 En el archivo  /etc/mysql/mysql.conf.d/mysqld.cnf  ubicar la línea bind-address = 127.0.0.1 y cambiarla por bind-address = 0.0.0.0  
 
-Una vez hecho el cambio anterior debe reiniciar el servicio de mysql, para ellos debe ejecutar el siguiente comando:
+Una vez hecho el cambio anterior debe reiniciar el servicio de mysql, para ello debe ejecutar el siguiente comando:
 
 ```bash
     sudo service mysql restart
