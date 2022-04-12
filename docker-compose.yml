@@ -13,7 +13,7 @@ services:
     volumes:
       - "./docker/serverdata.json:/valle/StreamingAssets/serverdata.json"
   valle_magico_front:
-    image: inclusionvalle/valle_magico_frontend:1.3.0
+    image: inclusionvalle/valle_magico_frontend:1.3.1
     container_name: valle_magico_front
     ports:
       - "9092:80"
