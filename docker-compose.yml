@@ -33,7 +33,7 @@ services:
       - OPEN_LOCATION_DB=talentumehs_valle_open_location
       - BACKEND_URL="http://valle_magico_back:3000/"
   valle_magico_back:
-    image: inclusionvalle/valle_magico_backend:1.1.2
+    image: inclusionvalle/valle_magico_backend:1.1.4
     container_name: valle_magico_back
     ports:
       - "9091:3000"
