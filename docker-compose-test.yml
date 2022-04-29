@@ -11,7 +11,7 @@ services:
       - valle_magico_back
     restart: always
     volumes:
-      - "./docker/serverdata.json:/valle/StreamingAssets/serverdata.json"
+      - "./docker/serverdata-test.json:/valle/StreamingAssets/serverdata.json"
   valle_magico_front:
     image: inclusionvalle/valle_magico_frontend:1.3.1
     container_name: valle_magico_front
@@ -25,10 +25,10 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
-      - DB_HOST=host.docker.internal
+      - DB_HOST=34.75.209.47
       - DB_PORT=3306
-      - DB_USERNAME=valle-user
-      - DB_PASSWORD=Inclusionvalle2022*
+      - DB_USERNAME=ehs
+      - DB_PASSWORD=vurwakuA2HySHhwyU5zM
       - DB_DATABASE=talentumehs_valle_magico
       - OPEN_LOCATION_DB=talentumehs_valle_open_location
       - BACKEND_URL="http://valle_magico_back:3000/"
@@ -43,10 +43,10 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
-      - DB_HOST=host.docker.internal
+      - DB_HOST=34.75.209.47
       - DB_PORT=3306
-      - DB_USERNAME=valle-user
-      - DB_PASSWORD=Inclusionvalle2022*
+      - DB_USERNAME=ehs
+      - DB_PASSWORD=vurwakuA2HySHhwyU5zM
       - DB_ONE_NAME=talentumehs_valle_open_location
       - DB_TWO_NAME=talentumehs_valle_magico
 networks:

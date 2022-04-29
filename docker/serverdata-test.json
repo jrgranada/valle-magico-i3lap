@@ -1,0 +1,18 @@
+{
+  "save": false,
+  "activeTypeServer": 2,
+  "data": [
+      {
+          "typeServer": 0,
+          "serverHost": ""
+      },
+      {
+          "typeServer": 1,
+          "serverHost": "https://vallemagico.co/si/api/"
+      },
+      {
+          "typeServer": 2,
+          "serverHost": "http://localhost:9092/api/"
+      }
+  ]
+}
